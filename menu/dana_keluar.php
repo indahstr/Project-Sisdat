@@ -203,17 +203,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                            $sql = mysqli_query($koneksi, "SELECT * FROM kas WHERE jenis = 'keluar' ");
                            while ($data = mysqli_fetch_assoc($sql)) {
 
-                        ?>
-                      <tr>
-                        <td><?php echo $no++; ?></td>
-                        <td><?php echo $data['penanggung']; ?></td>
-                        <td><?php echo $data['keterangan']; ?></td>
-                        <td><?php echo date('d F Y', strtotime($data['tgl'])); ?></td>
-                        <td style="text-align: right;">
-                             <?php echo number_format($data['keluar']).",-"; ?>
-                         </td>
+                            ?>
+                            <tr>
+                              <td><?php echo $data['Kode']; ?></td>
+                              <td><?php echo $data['Nama_Mhs']; ?></td>
+                              <td><?php echo date('d F Y', strtotime($data['tgl'])); ?></td>
+                              <td style="text-align: right;">
+                                   <?php echo number_format($data['jumlah']).",-"; ?>
+                               </td>
+                               <td><?php echo $data['keterangan']; ?></td>
                           <td>
-                             <a onclick="return confirm('Apakah anda yakin ingin menghapus data?')" href="hapus_keluar.php?id=<?php echo $data['kode'];?>" class="btn btn-danger btn-md" title="Hapus Data"><i class="fa fa-trash"> </i></a>
+                          <a onclick="return confirm('Apakah anda yakin ingin menghapus data?')" href="hapus_masuk.php?id=<?php echo $data['ID_Mhs'];?>" class="btn btn-danger btn-md" title="Hapus Data"><i class="fa fa-trash"> </i></a>
                                             </td>
                       </tr>
                        <?php 
