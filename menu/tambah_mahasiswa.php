@@ -127,13 +127,13 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Tambah Pemasukan
+            Tambah Data Mahasiswa
             
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> HOME</a></li>
-            <li><a href="#"> Pemasukan</a></li>
-            <li class="active"> Tambah Pemasukan</li>
+            <li><a href="#"> Data Mahasiswa</a></li>
+            <li class="active"> Tambah Data Mahasiswa</li>
           </ol>
         </section>
         <!-- Main content -->
