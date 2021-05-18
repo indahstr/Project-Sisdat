@@ -53,6 +53,7 @@ if(isset($_SESSION['username'])) {
         </form>
         <!-- /.social-auth-links -->
     <hr/><center>
+    
     <span style="text-align: center;">Powered By: <a href="http://chanofficial.my.id">Gopher 2020</span>
   </div>
 
