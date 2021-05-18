@@ -30,10 +30,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
           page. However, you can choose any other skin. Make sure you
           apply the skin class to the body tag so the changes take effect.
     -->
-<<<<<<< HEAD
+
     <link href="../adminlte/dist/css/skins/skin-green.min.css" rel="stylesheet" type="text/css" />
-=======
->>>>>>> 5e518d73734543bdaefac3baf894c76d1727aeb6
     <link href="../adminlte/dist/css/skins/skin-green-light.min.css" rel="stylesheet" type="text/css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
