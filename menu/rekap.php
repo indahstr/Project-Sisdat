@@ -185,13 +185,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <table id="example2" class="table table-bordered table-hover">
                     <thead>
                       <tr>
-                         <th>No.</th>
-                         <th>Penanggung Jawab</th>
-                         <th>Keterangan</th>
+                         <th>No.Transaksi</th>
+                         <th>Nama Mahasiswa</t>
                          <th>Tanggal</th>
+                         <th>Keterangan</th>
                          <th>jenis</th>
                          <th>masuk</th>
                          <th>keluar</th>
+                    
                          
                       </tr>
                     </thead>
@@ -204,10 +205,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                          ?>
                       <tr>
-                        <td><?php echo $no++; ?></td>
-                        <td><?php echo $data['penanggung']; ?></td>
-                        <td><?php echo $data['keterangan']; ?></td>
+                        <td><?php echo $data['Kode']; ?></td>
+                        <td><?php echo $data['Nama_Mhs']; ?></td>
                         <td><?php echo date('d F Y', strtotime($data['tgl'])); ?></td>
+                        <td><?php echo $data['keterangan']; ?></td>
                         <td><?php echo $data['jenis']; ?></td>
                         <td style="text-align: right;">
                              <?php echo number_format($data['jumlah']).",-"; ?>
