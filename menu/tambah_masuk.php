@@ -200,10 +200,10 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
       <footer class="main-footer">
         <!-- To the right -->
         <div class="pull-right hidden-xs">
-          <a href="http://SMEnt.com" target="blank">SM Entertainment</a>
+          <a href="http://himatif.fmipa.unpad.ac.id/" target="blank">Gopher 2020</a>
         </div>
         <!-- Default to the left -->
-        <strong>Copyright &copy; 2021 Wang.Cash</strong> All rights reserved.
+        <strong>Copyright &copy; 2021 Wang.Cash </strong> All rights reserved.
       </footer>
       
         

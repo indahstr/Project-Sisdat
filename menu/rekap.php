@@ -247,10 +247,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
        <footer class="main-footer">
         <!-- To the right -->
         <div class="pull-right hidden-xs">
-          <a href="http://chanofficial.my.id" target="blank">Gopher 2020</a>
+          <a href="http://himatif.fmipa.unpad.ac.id/" target="blank">Gopher 2020</a>
         </div>
         <!-- Default to the left -->
-        <strong>Copyright &copy; 2021 Wang.Cash</strong> All rights reserved.
+        <strong>Copyright &copy; 2021 Wang.Cash </strong> All rights reserved.
       </footer>
       
         
