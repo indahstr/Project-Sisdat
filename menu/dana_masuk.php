@@ -192,9 +192,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <tr>
                          <th>No. Pemasukkan</th>
                          <th>Nama Mahasiswa</th>
-                         <th>ID Mahasiwa</th>
                          <th>Tanggal</th>
                          <th>Jumlah</th>
+                         <th>Keterangan</th>
                          <th>Aksi</th>
                       </tr>
                     </thead>
@@ -206,13 +206,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                         ?>
                       <tr>
-                        <td><?php echo $no++; ?></td>
-                        <td><?php echo $data['penanggung']; ?></td>
-                        <td><?php echo $data['keterangan']; ?></td>
+                        <td><?php echo $data['Kode']; ?></td>
+                        <td><?php echo $data['Nama_Mhs']; ?></td>
                         <td><?php echo date('d F Y', strtotime($data['tgl'])); ?></td>
                         <td style="text-align: right;">
                              <?php echo number_format($data['jumlah']).",-"; ?>
                          </td>
+                         <td><?php echo $data['keterangan']; ?></td>
                           <td>
                              <a onclick="return confirm('Apakah anda yakin ingin menghapus data?')" href="hapus_masuk.php?id=<?php echo $data['kode'];?>" class="btn btn-danger btn-md" title="Hapus Data"><i class="fa fa-trash"> </i></a>
                                             </td>
