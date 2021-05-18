@@ -8,14 +8,11 @@ require '../koneksi.php';
 error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 ?>
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
+
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Wang.Cash | Tambah Pengeluaran</title>
+    <title>Wang.Cash |  Input Pemasukkan</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
     <link href="../adminlte/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -26,39 +23,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Theme style -->
     <link href="../adminlte/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
 	
-    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
-          page. However, you can choose any other skin. Make sure you
-          apply the skin class to the body tag so the changes take effect.
-    -->
     <link href="../adminlte/dist/css/skins/skin-green-light.min.css" rel="stylesheet" type="text/css" />
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-  <!--
-  BODY TAG OPTIONS:
-  =================
-  Apply one or more of the following classes to get the
-  desired effect
-  |---------------------------------------------------------|
-  | SKINS         | skin-blue                               |
-  |               | skin-black                              |
-  |               | skin-purple                             |
-  |               | skin-yellow                             |
-  |               | skin-red                                |
-  |               | skin-green                              |
-  |---------------------------------------------------------|
-  |LAYOUT OPTIONS | fixed                                   |
-  |               | layout-boxed                            |
-  |               | layout-top-nav                          |
-  |               | sidebar-collapse                        |
-  |               | sidebar-mini                            |
-  |---------------------------------------------------------|
-  -->
+
   <body class="skin-green-light sidebar-mini">
     <div class="wrapper">
 
@@ -88,7 +55,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Menu Toggle Button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <!-- The user image in the navbar-->
-                  <img src=../foto/pass.png" class="user-image" alt="User Image"/>
+                  <img src="../foto/pass.png" class="user-image" alt="User Image"/>
                   <!-- hidden-xs hides the username on small devices so only the image appears. -->
                   <span class="hidden-xs"><?php echo ucwords($_SESSION['username']); ?></span>
                 </a>
@@ -160,13 +127,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Tambah Pengeluaran
+            Tambah Pemasukan
             
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> HOME</a></li>
             <li><a href="#"> Pemasukan</a></li>
-            <li class="active"> Tambah Pengeluaran</li>
+            <li class="active"> Tambah Pemasukan</li>
           </ol>
         </section>
         <!-- Main content -->
@@ -185,20 +152,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <form role="form" method="POST">
                   <div class="box-body">
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Penangung Jawab</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Penanggung jawab"  name="penanggung">
+                    <label for="exampleInputEmail1">ID Mahasiswa</label>
+                      <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Masukkan 6 Digit Terakhir"  name="ID_Mhs">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Keterangan</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Keterangan" name="ket">
+                      <label for="exampleInputEmail1">Nama Mahasiswa</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama Mahasiswa"  name="Nama_Mhs">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">tanggal</label>
-                      <input type="date" class="form-control" id="exampleInputEmail1" placeholder="tanggal" name="tgl">
+                      <label for="exampleInputEmail1">Jenis_Kelamin</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Keterangan" name="Jenis_Kelamin">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputPassword1">Jumlah</label>
-                      <input type="number" class="form-control" id="exampleInputPassword1" placeholder="jumlah" name="jml">
+                      <label for="exampleInputEmail1">Alamat</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Alamat" name="Alamat">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Status</label>
+                      <input type="Text" class="form-control" id="exampleInputPassword1" placeholder="" name="Status">
                     </div> 
                   </div><!-- /.box-body -->
 
@@ -209,20 +180,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div><!-- /.box -->
              <?php 
                     if(isset($_POST['simpan'])) {
-                        $kode = $_POST['kode'];
-                        $penanggung = $_POST['penanggung'];
-                        $tgl = $_POST['tgl'];
-                        $ket = $_POST['ket'];
-                        $keluar = $_POST['jml'];
+                        $ID_Mhs= $_POST['ID_Mhs'];
+                        $Nama_Mhs = $_POST['Nama_Mhs'];
+                        $Jenis_Kelamin = $_POST['Jenis_Kelamin'];
+                        $Alamat = $_POST['Alamat'];
+                        $Status = $_POST['Status'];
 
-                        $sql = mysqli_query($koneksi, "INSERT INTO kas (kode, penanggung, keterangan, tgl, jumlah, jenis, keluar) VALUES ('$kode', '$penanggung', '$ket', '$tgl', '0', 'keluar', $keluar)");
+                        $sql = mysqli_query($koneksi, "INSERT INTO Mahasiswa (ID_Mhs,Nama_Mhs,Jenis_Kelamin,Alamat,Status) VALUES ('$ID_Mhs', '$Nama_Mhs', '$Jenis_Kelamin', '$Alamat', '$Status',0)");
 
                         if($sql) {
 
                             echo "
                                 <script>
                                 alert('Data Berhasil Ditambahkan');
-                                document.location.href = 'dana_keluar.php';
+                                document.location.href = 'dana_masuk.php';
                                 </script>";   
                         }
                     }
@@ -236,7 +207,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </div><!-- /.content-wrapper -->
 
       <!-- Main Footer -->
-       <footer class="main-footer">
+      <footer class="main-footer">
         <!-- To the right -->
         <div class="pull-right hidden-xs">
           <a href="http://himatif.fmipa.unpad.ac.id/" target="blank">Gopher 2020</a>
