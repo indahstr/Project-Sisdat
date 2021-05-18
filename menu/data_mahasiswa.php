@@ -211,7 +211,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <a href="http://chanofficial.my.id" target="blank">Chan Official</a>
         </div>
         <!-- Default to the left -->
-        <strong>Copyright &copy; 2020 Kas Kita.</strong> All rights reserved.
+        <strong>Copyright &copy; 2020 Wang.Cash.</strong> All rights reserved.
       </footer>
       
         
