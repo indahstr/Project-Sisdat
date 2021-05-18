@@ -1,22 +1,18 @@
-<?php
+<?php 
 session_start();
 if(!isset($_SESSION['username'])) {
     header("Location: ../login.php");
     die();
 }
 require '../koneksi.php';
+error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 ?>
-
-
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
+
 <html>
   <head>
     <meta charset="UTF-8">
-    <title> Wang.Cash | Dana Mahasiswa</title>
+    <title>Wang.Cash |  Input Pemasukkan</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
     <link href="../adminlte/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -27,13 +23,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Theme style -->
     <link href="../adminlte/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
 	
-    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
-          page. However, you can choose any other skin. Make sure you
-          apply the skin class to the body tag so the changes take effect.
-    -->
     <link href="../adminlte/dist/css/skins/skin-green-light.min.css" rel="stylesheet" type="text/css" />
-    <!-- DATA TABLES -->
-    <link href="../adminlte/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+
 
   <body class="skin-green-light sidebar-mini">
     <div class="wrapper">
@@ -42,7 +33,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <header class="main-header">
 
         <!-- Logo -->
-        <a href="home.php" class="logo">
+        <a href="index2.html" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>W</b></span>
           <!-- logo for regular state and mobile devices -->
@@ -106,7 +97,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li class="header">Menu Utama</li>
             <!-- Optionally, you can add icons to the links -->
             <li class="active"><a href="home.php"><i class='fa fa-home'></i> <span> Dashboard</span></a></li>
-            <li><a href="#"><i class="fa fa-address-book"></i> <span> Mahasiswa</span><i class="fa fa-angle-left pull-right"></i></a> 
+            <li><a href="#"><i class='fa fa-address-book'></i> <span> Mahasiswa</span><i class="fa fa-angle-left pull-right"></i></a> 
                 <ul class="treeview-menu">
                 <li class="active"><a href="data_mahasiswa.php"><i class="fa fa-mail-forward"></i> Mahasiswa</a></li>
                 <li><a href="tambah_mahasiswa.php"><i class="fa fa-plus-square-o"></i> Tambah Data Mahasiswa</a></li>
@@ -136,82 +127,93 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Mahasiswa
+            Tambah Pemasukan
             
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> HOME</a></li>
-            <li><a href="#"> Mahasiswa</a></li>
-            <li class="active"> </li>
+            <li><a href="#"> Pemasukan</a></li>
+            <li class="active"> Tambah Pemasukan</li>
           </ol>
         </section>
         <!-- Main content -->
       
-
-        <section class="content">
-            <div class="box">
+      
+         <section class="content">
+          <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+              <!-- general form elements -->
+              <div class="box box-primary">
                 <div class="box-header">
-                  <div class=".col-sm-4">
-                  <h3 class="box-title"></h3>
-                </div>
-                  <div class=".col-sm-3" style="text-align:left;">
-                  <a href="tambah_mahasiswa.php"><button class="btn btn.bg-olive btn-primary"><li class="fa fa-plus"></li> Tambah Data</button></a>
-                </div>
-                
+                  <h3 class="box-title"><i class="fa fa-plus-square-o"></i> Tambah Data</h3>
                 </div><!-- /.box-header -->
-                <div class="box-body">
-                  <table id="example1" class="table table-bordered table-striped">
-                    <thead>
-                      <tr>
-                         <th>ID Mahasiwa</th>
-                         <th>Nama Mahasiswa</th>
-                         <th>Jenis_Kelamin</th>
-                         <th>Alamat</th>
-                         <th>Status</th>
-                         <th>Aksi</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                       <?php 
-                          $no = 1;
-                           $sql = mysqli_query($koneksi, "SELECT * FROM mahasiswa");
-                           while ($data = mysqli_fetch_assoc($sql)) {
+                <!-- form start -->
+                <form role="form" method="POST">
+                  <div class="box-body">
+                    <div class="form-group">
+                    <label for="exampleInputEmail1">ID Mahasiswa</label>
+                      <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Masukkan 6 Digit Terakhir"  name="ID_Mhs">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Nama Mahasiswa</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama Mahasiswa"  name="Nama_Mhs">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Jenis_Kelamin</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Keterangan" name="Jenis_Kelamin">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Alamat</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Alamat" name="Alamat">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Status</label>
+                      <input type="Text" class="form-control" id="exampleInputPassword1" placeholder="" name="Status">
+                    </div> 
+                  </div><!-- /.box-body -->
 
-                        ?>
-                      <tr>
-                        <td><?php echo $data['ID_Mhs']; ?></td>
-                        <td><?php echo $data['Nama_Mhs']; ?></td>
-                        <td><?php echo $data['Jenis_Kelamin']; ?></td>
-                        <td><?php echo $data['Alamat']; ?></td>
-                        <td><?php echo $data['Status']; ?></td>
-                          <td>
-                             <a onclick="return confirm('Apakah anda yakin ingin menghapus data?')" href="hapus_masuk.php?id=<?php echo $data['ID_Mhs'];?>" class="btn btn-danger btn-md" title="Hapus Data"><i class="fa fa-trash"> </i></a>
-                                            </td>
-                      </tr>
-                       <?php 
-                         ini_set("display_errors","Off");
-                         $total = $total+$data['jumlah'];
-                         } 
-                        ?>
-                    </tbody>
-                  </table>
+                  <div class="box-footer">
+                    <button type="submit" name="simpan" class="btn btn-primary">Simpan</button>
+                  </div>
+                </form>
+              </div><!-- /.box -->
+             <?php 
+                    if(isset($_POST['simpan'])) {
+                        $ID_Mhs= $_POST['ID_Mhs'];
+                        $Nama_Mhs = $_POST['Nama_Mhs'];
+                        $Jenis_Kelamin = $_POST['Jenis_Kelamin'];
+                        $Alamat = $_POST['Alamat'];
+                        $Status = $_POST['Status'];
 
-                </div><!-- /.box-body -->
-              </div><!-- /.box --> 
+                        $sql = mysqli_query($koneksi, "INSERT INTO Mahasiswa (ID_Mhs,Nama_Mhs,Jenis_Kelamin,Alamat,Status) VALUES ('$ID_Mhs', '$Nama_Mhs', '$Jenis_Kelamin', '$Alamat', '$Status',0)");
+
+                        if($sql) {
+
+                            echo "
+                                <script>
+                                alert('Data Berhasil Ditambahkan');
+                                document.location.href = 'dana_masuk.php';
+                                </script>";   
+                        }
+                    }
+                ?>
+                            <!-- Akhir Halaman Tambah -->
+            </div>
+          </div>
         </section>
-
          
 
       </div><!-- /.content-wrapper -->
 
       <!-- Main Footer -->
-       <footer class="main-footer">
+      <footer class="main-footer">
         <!-- To the right -->
         <div class="pull-right hidden-xs">
-          <a href="http://chanofficial.my.id" target="blank">Chan Official</a>
+          <a href="http://himatif.fmipa.unpad.ac.id/" target="blank">Gopher 2020</a>
         </div>
         <!-- Default to the left -->
-        <strong>Copyright &copy; 2020 Wang.Cash.</strong> All rights reserved.
+        <strong>Copyright &copy; 2021 Wang.Cash </strong> All rights reserved.
       </footer>
       
         
@@ -225,34 +227,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- jQuery 2.1.4 -->
     <script src="../adminlte/plugins/jQuery/jQuery-2.1.4.min.js"></script>
-    <!-- Bootstrap. 3.3.2 JS -->
+    <!-- Bootstrap 3.3.2 JS -->
     <script src="../adminlte/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <!-- AdminLTE App -->
     <script src="../adminlte/dist/js/app.min.js" type="text/javascript"></script>
 
-    <!-- DATA TABES SCRIPT -->
-    <script src="../adminlte/plugins/datatables/jquery.dataTables.min.js" type="text/javascript"></script>
-    <script src="../adminlte/plugins/datatables/dataTables.bootstrap.min.js" type="text/javascript"></script>
-    <!-- SlimScroll -->
-    <script src="../adminlte/plugins/slimScroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-    <!-- FastClick -->
-    <script src='../adminlte/plugins/fastclick/fastclick.min.js'></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="../adminlte/dist/js/demo.js" type="text/javascript"></script>
-    <!-- page script -->
-    <script type="text/javascript">
-      $(function () {
-        $("#example1").dataTable();
-        $('#example2').dataTable({
-          "bPaginate": true,
-          "bLengthChange": false,
-          "bFilter": false,
-          "bSort": true,
-          "bInfo": true,
-          "bAutoWidth": false
-        });
-      });
-    </script>
+   
     
   </body>
 </html>
