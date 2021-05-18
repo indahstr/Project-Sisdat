@@ -12,7 +12,7 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Wang.Cash |  Input Pemasukkan</title>
+    <title>Wang.Cash | Mahasiswa </title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
     <link href="../adminlte/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -127,13 +127,13 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Tambah Pemasukan
+            Tambah Data Mahasiswa
             
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> HOME</a></li>
-            <li><a href="#"> Pemasukan</a></li>
-            <li class="active"> Tambah Pemasukan</li>
+            <li><a href="#"> Mahasiswa</a></li>
+            <li class="active"> Tambah Mahasiswa</li>
           </ol>
         </section>
         <!-- Main content -->
