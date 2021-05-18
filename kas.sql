@@ -24,6 +24,32 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
+create table mahasiswa (
+'ID_Mhs' int (6) NOT NULL,
+'Nama_Mhs' varchar(40),
+'Jenis_Kelamin' varchar (1),
+'Alamat' varchar (40),
+'Status' varchar (10),
+primary key (ID_Mhs)
+); 
+
+insert into mahasiswa values
+('200004' , 'Aulia Rahmanita' , 'P' , 'Kuningan' , 'BE'),
+('200014' , 'Nawang Ilmi Adzani' , 'P' , 'Bandung' , 'BE'),
+('200040' , 'Indah Sutriyati' , 'P' , 'Cimahi' , 'BE'),
+('200001' , 'Ariq Hakim Ruswadi' , 'L' , 'Bandung' , 'non-BE'),
+('200002' , 'Rommel Malik Kusnadi' , 'L' , 'Kuningan' , 'non-BE'),
+('200003' , 'Affan Rifqy Kurniadi' , 'L' , 'Bandung' , 'non-BE'),
+('200006' , 'Hali Putri Aisyah' , 'P' , 'Bandung' , 'non-BE'),
+('200009' , 'Wafi Fahruzzaman' , 'L' , 'Bandung' , 'BE'),
+('200010' , 'Rizky Mahardika Hariyanto' , 'L' , 'Cimahi' , 'BE'),
+('200033' , 'Rafa Azka Ulinnuha' , 'P' , 'Bekasi' , 'non-BE'),
+('200047' , 'Kharisma Fitri Nurunnisa Siahaan' , 'P' , 'Bandung' , 'non-BE'),
+('200055' , 'Wafa Tsabita' , 'P' , 'Sumedang' , 'BE'),
+('200062' , 'Zahran Hanif Fathanmubin' , 'L' , 'Jakarta' , 'BE'),
+('200064' , 'Muhammad Ariiq Rakha Shafa' , 'L' , 'Garut' , 'BE'),
+('200036' , 'Laura Azra Aprilyanti' , 'P' , 'Banjar' , 'BE');
+
 --
 -- Table structure for table `admin`
 --
