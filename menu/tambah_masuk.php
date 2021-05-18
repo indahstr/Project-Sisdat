@@ -23,10 +23,10 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
     <!-- Theme style -->
     <link href="../adminlte/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
 	
-    <link href="../adminlte/dist/css/skins/skin-green.min.css" rel="stylesheet" type="text/css" />
+    <link href="../adminlte/dist/css/skins/skin-green-light.min.css" rel="stylesheet" type="text/css" />
 
 
-  <body class="skin-green sidebar-mini">
+  <body class="skin-green-light sidebar-mini">
     <div class="wrapper">
 
       <!-- Main Header -->

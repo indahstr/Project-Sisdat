@@ -11,7 +11,7 @@ if(isset($_SESSION['username'])) {
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>KAS KITA | Log in</title>
+    <title>Wang.Cash | Log in</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
     <link href="./adminlte/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -33,9 +33,9 @@ if(isset($_SESSION['username'])) {
     <div class="login-box">
       <div class="login-box-body">
        <div>
-        <h1 style="text-align: center;"><b>KAS KITA</b></h1>
+        <h1 style="text-align: center;" ><font style="color: #27B5B6;"><b>Wang.Cash</b></h1>
         </div><hr/>
-        <p class="login-box-msg">Log In Bendahara</p>
+        <p class="login-box-msg"><font style="color: black;">Log In Bendahara</p>
         <form action="ceklogin.php" method="post">
           <div class="form-group has-feedback">
             <input type="text" name="username" class="form-control" placeholder="Username"/>
@@ -53,7 +53,7 @@ if(isset($_SESSION['username'])) {
         </form>
         <!-- /.social-auth-links -->
     <hr/><center>
-    <span style="text-align: center;">Powered By: <a href="http://chanofficial.my.id">chanofficial</span>
+    <span style="text-align: center;">Powered By: <a href="http://chanofficial.my.id">Gopher 2020</span>
   </div>
 
 
