@@ -274,10 +274,10 @@ while($data=mysqli_fetch_assoc($sql)) {
       <footer class="main-footer">
         <!-- To the right -->
         <div class="pull-right hidden-xs">
-          <a href="http://SMEnt.com" target="blank">SM Entertainment</a>
+          <a href="http://himatif.fmipa.unpad.ac.id/" target="blank">Gopher 2020</a>
         </div>
         <!-- Default to the left -->
-        <strong>Copyright &copy; 2021 Wang.Cash</strong> All rights reserved.
+        <strong>Copyright &copy; 2021 Wang.Cash </strong> All rights reserved.
       </footer>
       
         
