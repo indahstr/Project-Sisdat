@@ -155,7 +155,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <h3 class="box-title"></h3>
                 </div>
                   <div class=".col-sm-3" style="text-align:left;">
-                  <a href="tambah_mahasiswa.php"><button class="btn btn.bg-olive btn-primary"><li class="fa fa-plus"></li> Tambah Data</button></a>
+                  <a href="tambah_masuk.php"><button class="btn btn.bg-olive btn-primary"><li class="fa fa-plus"></li> Tambah Data</button></a>
                 </div>
                 
                 </div><!-- /.box-header -->
@@ -211,7 +211,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <a href="http://chanofficial.my.id" target="blank">Chan Official</a>
         </div>
         <!-- Default to the left -->
-        <strong>Copyright &copy; 2020 Wang.Cash.</strong> All rights reserved.
+        <strong>Copyright &copy; 2020 Kas Kita.</strong> All rights reserved.
       </footer>
       
         
