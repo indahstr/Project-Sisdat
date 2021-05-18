@@ -31,7 +31,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           page. However, you can choose any other skin. Make sure you
           apply the skin class to the body tag so the changes take effect.
     -->
-    <link href="../adminlte/dist/css/skins/skin-blue.min.css" rel="stylesheet" type="text/css" />
+    <link href="../adminlte/dist/css/skins/skin-green.min.css" rel="stylesheet" type="text/css" />
     <!-- DATA TABLES -->
     <link href="../adminlte/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
 
@@ -62,7 +62,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   |               | sidebar-mini                            |
   |---------------------------------------------------------|
   -->
-  <body class="skin-blue sidebar-mini">
+  <body class="skin-green sidebar-mini">
     <div class="wrapper">
 
       <!-- Main Header -->
@@ -172,8 +172,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <section class="content">
             <div class="box">
                 <div class="box-header">
-                 <div class="col-md-6">
-                  <h3 class="box-title">Data Pengeluaran</h3>
+                 <div class=".col-sm-4">
+                  <h3 class="box-title"></h3>
                 </div>
                   <div class="col-md-6" style="text-align: right;">
                   <a href="tambah_keluar.php"><button class="btn btn.bg-olive btn-primary"><li class="fa fa-plus"></li> Tambah Data</button></a>
