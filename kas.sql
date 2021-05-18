@@ -24,12 +24,35 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `nama` varchar(200) NOT NULL,
+  `level` varchar(100) NOT NULL,
+  `foto` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `username`, `password`, `nama`, `level`, `foto`) VALUES
+(1, 'master', 'eb0a191797624dd3a48fa681d3061212', 'master', 'admin', ''),
+(2, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', 'admin', '');
+
+-- --------------------------------------------------------
+
 create table mahasiswa (
-'ID_Mhs' int (6) NOT NULL,
-'Nama_Mhs' varchar(40),
-'Jenis_Kelamin' varchar (1),
-'Alamat' varchar (40),
-'Status' varchar (10),
+ID_Mhs int (6) NOT NULL,
+Nama_Mhs varchar(40),
+Jenis_Kelamin varchar (1),
+Alamat varchar (40),
+Status varchar (10),
 primary key (ID_Mhs)
 ); 
 
@@ -50,67 +73,34 @@ insert into mahasiswa values
 ('200064' , 'Muhammad Ariiq Rakha Shafa' , 'L' , 'Garut' , 'BE'),
 ('200036' , 'Laura Azra Aprilyanti' , 'P' , 'Banjar' , 'BE');
 
---
--- Table structure for table `admin`
---
-
-CREATE TABLE `admin` (
-  `id` int(11) NOT NULL,
-  `username` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL,
-  `nama` varchar(200) NOT NULL,
-  `level` varchar(100) NOT NULL,
-  `foto` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `admin`
---
-
-INSERT INTO `admin` (`id`, `username`, `password`, `nama`, `level`, `foto`) VALUES
-(1, 'master', '12345', 'master', 'admin', ''),
-(2, 'admin', '12345', 'admin', 'admin', '');
-(3, 'admin1','00000','admin','admin','');
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `kas`
 --
 
 CREATE TABLE `kas` (
-  `kode` int(11) NOT NULL,
-  `penanggung` varchar(100) NOT NULL,
-  `keterangan` varchar(300) NOT NULL,
+  `Kode` varchar(20) NOT NULL,
+  `Nama_Mhs` varchar(40) NOT NULL,
   `tgl` date NOT NULL,
   `jumlah` int(10) NOT NULL,
   `jenis` varchar(20) NOT NULL,
-  `keluar` int(20) NOT NULL
+  `keterangan` varchar(100) NOT NULL,
+  `keluar` int(20) NOT NULL,
+primary key (Kode)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `kas`
 --
 
-INSERT INTO `kas` (`kode`, `penanggung`, `keterangan`, `tgl`, `jumlah`, `jenis`, `keluar`) VALUES
-(2165, 'bedahara', 'testtt', '2018-08-19', 50000, 'masuk', 0),
-(2166, '0', 'test masuk 2', '2018-08-19', 30000, 'masuk', 0),
-(2169, '0', 'gg', '2020-04-01', 20000, 'masuk', 0),
-(11111, '0', 'ADAS', '2020-04-25', 2300000, 'masuk', 0),
-(11112, '0', 'FGHFG', '2020-04-04', 200000, 'masuk', 0),
-(11113, '', 'fafafafafafafa', '2020-04-06', 123456, 'masuk', 0),
-(11114, 'asad', 'asd', '2020-04-01', 123456789, 'masuk', 0),
-(11115, 'ivan', 'infaq', '2020-04-20', 120000, 'masuk', 0),
-(11117, 'bendahara', 'ganti rugi', '2020-04-30', 0, 'keluar', 120000),
-(11118, 'bendahara', 'bayar hutang', '2020-04-30', 0, 'keluar', 50000),
-(11119, 'inan', 'beli aqua', '2020-04-21', 0, 'keluar', 25000),
-(11120, 'inan', 'infaq hamba Allah', '0000-00-00', 250000, 'masuk', 0),
-(11121, 'ivan', 'dapat dijaln', '2020-04-29', 10000, 'masuk', 0),
-(11122, 'ivan', 'dari hasil mulung', '2020-04-28', 23000, 'masuk', 0),
-(11123, 'ivan', 'hasil infaq 5 tahun', '2020-04-27', 100000000, 'masuk', 0),
-(11124, 'a', 'a', '2020-04-01', 100000, 'masuk', 0),
-(11125, 'b', 'b', '2020-04-22', 100000000, 'masuk', 0);
-
+INSERT INTO `kas` (`kode`, `Nama_Mhs`,`tgl`, `jumlah`, `jenis`,`keterangan`,`keluar`) VALUES
+('MSK00001' , 'Rommel Malik Kusnadi' , '2021-05-01','3000','masuk','Kas Feb 2021',0),
+('MSK00002' , 'Wafa Tsabita', '2021-05-01', '6000' ,'masuk','Kas Feb-Maret 2021',0),
+('MSK00003' , 'Rafa Azka Ulinnuha' ,'2021-05-02', '3000' ,'masuk','Kas Feb 2021',0),
+('MSK00004' , 'Zahran Hanif Fathanmubin' , '2021-05-03','3000' ,'masuk' ,'Kas Feb 2021',0),
+('MSK00005' , 'Wafi Fahruzzaman' ,'2021-05-03', '6000','masuk','Kas Feb-Maret 2021',0 ),
+('MSK00006' , 'Laura Azra Aprilyanti' , '2021-05-04' , '6000','masuk','Kas Feb-Maret 2021',0),
+('HTG00006' , 'Zahran Hanif Fathanmubin' ,'2021-05-04', '3000','keluar','Makrab',3000);
 --
 -- Indexes for dumped tables
 --
@@ -122,12 +112,6 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `kas`
---
-ALTER TABLE `kas`
-  ADD PRIMARY KEY (`kode`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -137,11 +121,6 @@ ALTER TABLE `kas`
 ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
---
--- AUTO_INCREMENT for table `kas`
---
-ALTER TABLE `kas`
-  MODIFY `kode` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11126;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
