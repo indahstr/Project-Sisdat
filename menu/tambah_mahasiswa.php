@@ -186,14 +186,13 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
                         $Alamat = $_POST['Alamat'];
                         $Status = $_POST['Status'];
 
-                        $sql = mysqli_query($koneksi, "INSERT INTO Mahasiswa (ID_Mhs,Nama_Mhs,Jenis_Kelamin,Alamat,Status) VALUES ('$ID_Mhs', '$Nama_Mhs', '$Jenis_Kelamin', '$Alamat', '$Status',0)");
+                        $sql = mysqli_query($koneksi, "INSERT INTO Mahasiswa (ID_Mhs,Nama_Mhs,Jenis_Kelamin,Alamat,Status) VALUES ('$ID_Mhs', '$Nama_Mhs', '$Jenis_Kelamin', '$Alamat', '$Status')");
 
                         if($sql) {
-
                             echo "
                                 <script>
                                 alert('Data Berhasil Ditambahkan');
-                                document.location.href = 'dana_masuk.php';
+                                document.location.href = 'data_mahasiswa.php';
                                 </script>";   
                         }
                     }
