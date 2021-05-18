@@ -16,7 +16,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>KAS KITA |  Rekapitulasi</title>
+    <title>Wang.Cash | Rekapitulasi</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
     <link href="../adminlte/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -31,7 +31,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           page. However, you can choose any other skin. Make sure you
           apply the skin class to the body tag so the changes take effect.
     -->
-    <link href="../adminlte/dist/css/skins/skin-blue.min.css" rel="stylesheet" type="text/css" />
+    <link href="../adminlte/dist/css/skins/skin-green.min.css" rel="stylesheet" type="text/css" />
     <!-- DATA TABLES -->
     <link href="../adminlte/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
 
@@ -62,7 +62,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   |               | sidebar-mini                            |
   |---------------------------------------------------------|
   -->
-  <body class="skin-blue sidebar-mini">
+  <body class="skin-green sidebar-mini">
     <div class="wrapper">
 
       <!-- Main Header -->
@@ -71,9 +71,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Logo -->
         <a href="home.png" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>KAS</b></span>
+          <span class="logo-mini"><b>W</b></span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>KAS KITA</b></span>
+          <span class="logo-lg"><b>Wang.Cash</b></span>
         </a>
 
         <!-- Header Navbar -->
@@ -247,10 +247,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
        <footer class="main-footer">
         <!-- To the right -->
         <div class="pull-right hidden-xs">
-          <a href="http://chanofficial.my.id" target="blank">Chan Official</a>
+          <a href="http://chanofficial.my.id" target="blank">Gopher 2020</a>
         </div>
         <!-- Default to the left -->
-        <strong>Copyright &copy; 2020 Kas Kita.</strong> All rights reserved.
+        <strong>Copyright &copy; 2021 Wang.Cash</strong> All rights reserved.
       </footer>
       
         
