@@ -165,7 +165,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> HOME</a></li>
-            <li><a href="#"> Pemasukan</a></li>
+            <li><a href="#"> Pengeluaran</a></li>
             <li class="active"> Tambah Pengeluaran</li>
           </ol>
         </section>
