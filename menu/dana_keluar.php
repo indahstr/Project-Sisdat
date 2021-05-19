@@ -91,14 +91,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Menu Toggle Button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <!-- The user image in the navbar-->
-                  <img src="../foto/pass.png" class="user-image" alt="User Image"/>
+                  <img src="../foto/pass.jpg" class="user-image" alt="User Image"/>
                   <!-- hidden-xs hides the username on small devices so only the image appears. -->
                   <span class="hidden-xs"><?php echo ucwords($_SESSION['username']); ?></span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- The user image in the menu -->
                   <li class="user-header">
-                    <img src="../foto/pass.png" class="img-circle" alt="User Image" />
+                    <img src="../foto/pass.jpg" class="img-circle" alt="User Image" />
                     <p>
                       <?php echo ucwords($_SESSION['username']); ?>
                       <small>Bendahara</small>
@@ -190,10 +190,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <thead>
                       <tr>
                          <th>No.</th>
-                         <th>Penanggung Jawab</th>
-                         <th>Keterangan</th>
+                         <th>Nama Mahasiswa</th>
                          <th>Tanggal</th>
                          <th>Jumlah</th>
+                         <th> Keterangan</th>
                          <th>Aksi</th>
                       </tr>
                     </thead>
@@ -209,9 +209,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               <td><?php echo $data['Nama_Mhs']; ?></td>
                               <td><?php echo date('d F Y', strtotime($data['tgl'])); ?></td>
                               <td style="text-align: right;">
-                                   <?php echo number_format($data['jumlah']).",-"; ?>
+                                   <?php echo number_format($data['keluar']).",-"; ?>
                                </td>
                                <td><?php echo $data['keterangan']; ?></td>
+                               
                           <td>
                           <a onclick="return confirm('Apakah anda yakin ingin menghapus data?')" href="hapus_keluar.php?id=<?php echo $data['Kode'];?>" class="btn btn-danger btn-md" title="Hapus Data"><i class="fa fa-trash"> </i></a>
                                             </td>
@@ -223,7 +224,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         ?>
                     </tbody>
                     <tr>
-                      <td colspan="4" style="text-align: left; font-size: 17px; color: maroon;">Total Kas Keluar :</td>
+                      <td colspan="3" style="text-align: left; font-size: 17px; color: maroon;">Total Kas Keluar :</td>
                        <td style="font-size: 17px; text-align: right; "><font style="color: green;"><?php echo " Rp." . number_format($total).",-"; ?></font></td>
                      </tr>
                   </table>

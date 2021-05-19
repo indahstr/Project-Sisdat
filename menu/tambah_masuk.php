@@ -55,14 +55,14 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
                 <!-- Menu Toggle Button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <!-- The user image in the navbar-->
-                  <img src="../foto/pass.png" class="user-image" alt="User Image"/>
+                  <img src="../foto/pass.jpg" class="user-image" alt="User Image"/>
                   <!-- hidden-xs hides the username on small devices so only the image appears. -->
                   <span class="hidden-xs"><?php echo ucwords($_SESSION['username']); ?></span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- The user image in the menu -->
                   <li class="user-header">
-                    <img src="../foto/pass.png" class="img-circle" alt="User Image" />
+                    <img src="../foto/pass.jpg" class="img-circle" alt="User Image" />
                     <p>
                       <?php echo ucwords($_SESSION['username']); ?>
                       <small>Bendahara</small>
