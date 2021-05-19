@@ -130,19 +130,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li class="header">Menu Utama</li>
             <!-- Optionally, you can add icons to the links -->
             <li class="active"><a href="home.php"><i class='fa fa-home'></i> <span> Dashboard</span></a></li>
-            <li><a href="#"><i class='fa fa-user'></i> <span> Mahasiswa</span><i class="fa fa-angle-left pull-right"></i></a> 
+            <li><a href="#"><i class='fa fa-user'></i> <span> Mahasiswa</span><i class="fa fa-angle-right pull-right"></i></a> 
                 <ul class="treeview-menu">
                 <li class="active"><a href="data_mahasiswa.php"><i class="fa fa-mail-forward"></i> Mahasiswa</a></li>
                 <li><a href="tambah_mahasiswa.php"><i class="fa fa-plus-square-o"></i> Tambah Data Mahasiswa</a></li>
                 </ul>
              </li>       
-			<li><a href="#"><i class='fa fa-institution'></i> <span> Pemasukan</span><i class="fa fa-angle-left pull-right"></i></a> 
+			<li><a href="#"><i class='fa fa-institution'></i> <span> Pemasukan</span><i class="fa fa-angle-right pull-right"></i></a> 
                 <ul class="treeview-menu">
                 <li class="active"><a href="dana_masuk.php"><i class="fa fa-mail-forward"></i> Dana Masuk</a></li>
                 <li><a href="tambah_masuk.php"><i class="fa fa-plus-square-o"></i> Tambah Pemasukan</a></li>
                 </ul>
              </li>       
-            <li> <a href="#"><i class='fa fa-cart-arrow-down'></i> <span> Pengeluaran</span><i class="fa fa-angle-left pull-right"></i></a>
+            <li> <a href="#"><i class='fa fa-cart-arrow-down'></i> <span> Pengeluaran</span><i class="fa fa-angle-right pull-right"></i></a>
                 <ul class="treeview-menu">
                 <li class="active"><a href="dana_keluar.php"><i class="fa fa-mail-reply"></i> Dana Keluar</a></li>
                 <li><a href="tambah_keluar.php"><i class="fa fa-plus-square-o"></i> Tambah Pengeluaran</a></li>
