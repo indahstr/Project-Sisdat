@@ -108,7 +108,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li class="active"><a href="home.php"><i class='fa fa-home'></i> <span> Dashboard</span></a></li>
             <li><a href="#"><i class='fa fa-user'></i> <span> Mahasiswa</span><i class="fa fa-angle-right pull-right"></i></a> 
                 <ul class="treeview-menu">
-                <li class="active"><a href="data_mahasiswa.php"><i class="fa fa-mail-forward"></i> Mahasiswa</a></li>
+                <li class="active"><a href="data_mahasiswa.php"><i class="fa fa-mail-forward"></i>Data Mahasiswa</a></li>
                 <li><a href="tambah_mahasiswa.php"><i class="fa fa-plus-square-o"></i> Tambah Data Mahasiswa</a></li>
                 </ul>
              </li>       
@@ -141,8 +141,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> HOME</a></li>
-            <li><a href="#"> Mahasiswa</a></li>
-            <li class="active"> </li>
+            <li class="active">Data Mahasiswa </li>
           </ol>
         </section>
         <!-- Main content -->
