@@ -181,7 +181,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                  <div class=".col-sm-4">
                   <h3 class="box-title"></h3>
                 </div>
-                  <div class="col-md-6" style="text-align: right;">
+                  <div class="col-md-6" style="text-align: left;">
                   <a href="tambah_keluar.php"><button class="btn btn.bg-olive btn-primary"><li class="fa fa-plus"></li> Tambah Data</button></a>
                 </div>
                 </div><!-- /.box-header -->
