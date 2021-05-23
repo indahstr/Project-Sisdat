@@ -151,9 +151,13 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
                 <!-- form start -->
                 <form role="form" method="POST">
                   <div class="box-body">
+                  <div class="form-group">
+                      <label for="exampleInputEmail1">Nomor Pemasukkan</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="ID Pemasukkan"  name="Kode">
+                    </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Nama Mahasiswa</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Penanggung jawab"  name="Nama_Mhs">
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama Mahasiswa"  name="Nama_Mhs">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">tanggal</label>
@@ -182,7 +186,7 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
                         $jml = $_POST['jumlah'];
                         $ket = $_POST['keterangan'];
 
-                        $sql = mysqli_query($koneksi, "INSERT INTO kas (kode, Nama_Mhs, tgl, jumlah,keterangan, jenis, keluar) VALUES ('$kode', '$Nama_Mhs',, '$tgl', '$jml','$ket', 'masuk', 0)");
+                        $sql = mysqli_query($koneksi, "INSERT INTO kas (kode, Nama_Mhs, tgl, jumlah,keterangan, jenis, keluar) VALUES ('$kode', '$Nama_Mhs', '$tgl', '$jml','$ket', 'masuk', 0)");
 
                         if($sql) {
 
