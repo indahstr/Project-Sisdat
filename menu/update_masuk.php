@@ -12,7 +12,7 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Wang.Cash |Masuk</title>
+    <title>Wang.Cash | Mahasiswa </title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
     <link href="../adminlte/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -127,32 +127,32 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Update Data Pemasukkan
+            Update Data Pemasukan
             
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> HOME</a></li>
-            <li><a href="#"> Mahasiswa</a></li>
-            <li class="active"> Update Data Pemasukkan</li>
+            <li><a href="#"> Pemasukan</a></li>
+            <li class="active"> Update Data Pemasukan</li>
           </ol>
         </section>
         <!-- Main content -->
 
-         <section class="content">
+        <section class="content">
           <div class="row">
             <!-- left column -->
             <div class="col-md-12">
               <!-- general form elements -->
               <div class="box box-primary">
                 <div class="box-header">
-                  <h3 class="box-title"><i class="fa fa-plus-square-o"></i> Update Data</h3>
+                  <h3 class="box-title"><i class="fa fa-plus-square-o"></i> Tambah Data</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
                 <form role="form" method="POST">
                   <div class="box-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Kode Pemasukkan</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukkan 6 Digit Kode Masuk"  name="Kode">
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukkan 8 Digit Kode Masuk"  name="Kode">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Nama Mahasiswa</label>
@@ -160,11 +160,11 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">tanggal</label>
-                      <input type="date" class="form-control" id="exampleInputEmail1" placeholder="tanggal" name="tgl">
+                      <input type="date" class="form-control" id="exampleInputEmail1" placeholder="Tanggal" name="tgl">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">Jumlah</label>
-                      <input type="number" class="form-control" id="exampleInputPassword1" placeholder="jumlah" name="jumlah">
+                      <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Jumlah" name="jumlah">
                     </div> 
                     <div class="form-group">
                       <label for="exampleInputEmail1">Keterangan</label>
@@ -178,11 +178,11 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
                 </form>
               </div><!-- /.box -->
         <?php
-        if ($_access == 'dana pemasukkan' && $_id != $_Kode) {
-		header("location:{$_url}pemasukkan/edit/{$_Kode}");
+        if ($_access == 'kas' && $_id != $_Kode) {
+		header("location:{$_url}kas/edit/{$_username}");
 	}
 
-$querya = mysqli_query($koneksi, "SELECT * FROM kas WHERE Kode='{$_kode}'");
+$querya = mysqli_query($koneksi, "SELECT * FROM kas WHERE jenis='masuk' AND Kode='{$_id}'");
 $field = mysqli_fetch_array($querya);
 
 ?>
@@ -190,11 +190,10 @@ $field = mysqli_fetch_array($querya);
 <div class="isi2">
 <h1>
 <?php if (in_array($_access, array('admin'))): ?>
-<a href="<?= $_url ?>mahasiswa<?= $_access == 'mahasiswa' ? '/view/' . $_id . '/' . urlencode($nama) : '' ?>" class="nav-button transform"><span></span></a>
+<a href="<?= $_url ?>kas<?= $_access == 'kas' ? '/view/' . $_id . '/' . urlencode($nama) : '' ?>" class="nav-button transform"><span></span></a>
 <?php endif; ?>
 Edit Pemasukan<br><?= $nama ?>
 </h1>
-
 
 <?php
       if (isset($_POST['simpan'])) {
@@ -202,22 +201,20 @@ Edit Pemasukan<br><?= $nama ?>
       $Kode= $_POST['Kode'];
       $Nama_Mhs = $_POST['Nama_Mhs'];
       $tgl = $_POST['tgl'];
-      $jml = $_POST['jumlah'];
-      $ket = $_POST['keterangan'];
+      $jumlah = $_POST['jumlah'];
+      $keterangan = $_POST['keterangan'];
 
       $query = mysqli_query($koneksi, "UPDATE kas SET Kode='$Kode' , 
       Nama_Mhs='$Nama_Mhs' , 
-      tgl='$tgl', 
-      jml='$jumlah' ,  
-      ket='$keterangan',
-      jenis='$jenis',
-      keluar='$keluar',
-      WHERE Kode='$Kode'");
+      tgl='$tgl' , 
+      jumlah='$jumlah' ,  
+      keterangan='$keterangan'
+      WHERE jenis='masuk' AND Kode='$Kode'");
 
       if($query) {
       echo "
       <script>
-      alert('Data Pemasukkan Berhasil Diubah');
+      alert('Data Pemasukan Berhasil Diubah');
       document.location.href = 'dana_masuk.php';
       </script>";   
       }

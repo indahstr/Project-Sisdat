@@ -170,9 +170,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </ol>
         </section>
         <!-- Main content -->
-      
-      
-        
+    
         <section class="content">
           <div class="row">
             <!-- left column -->
@@ -187,19 +185,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <div class="box-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Kode Pengeluaran</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukkan 6 Digit Kode Masuk"  name="Kode">
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukkan 8 Digit Kode Masuk"  name="Kode">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">User</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama Mahasiswa"  name="Nama_Mhs">
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="User"  name="Nama_Mhs">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">tanggal</label>
+                      <label for="exampleInputEmail1">Tanggal</label>
                       <input type="date" class="form-control" id="exampleInputEmail1" placeholder="tanggal" name="tgl">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">Jumlah</label>
-                      <input type="number" class="form-control" id="exampleInputPassword1" placeholder="jumlah" name="keluar">
+                      <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Jumlah" name="keluar">
                     </div> 
                     <div class="form-group">
                       <label for="exampleInputEmail1">Keterangan</label>

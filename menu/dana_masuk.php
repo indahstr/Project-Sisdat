@@ -182,7 +182,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <h3 class="box-title"></h3>
                 </div>
                   <div class="col-sm-6" style="text-align:left;">
-                  <a href="tambah_masuk.php"><button class="btn btn.bg-olive btn-primary"><li class="fa fa-plus"></li> Tambah Data</button></a>
+                  <a href="tambah_masuk.php"><button class="btn btn.bg-olive btn-info"><li class="fa fa-plus"></li> Tambah Data</button></a>
                 </div>
                 
                 </div><!-- /.box-header -->

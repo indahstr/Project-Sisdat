@@ -1,22 +1,18 @@
-<?php
+<?php 
 session_start();
 if(!isset($_SESSION['username'])) {
     header("Location: ../login.php");
     die();
 }
 require '../koneksi.php';
+error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 ?>
-
-
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
+
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Wang.Cash | Dana Keluar   </title>
+    <title>Wang.Cash | Mahasiswa </title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
     <link href="../adminlte/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -27,41 +23,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Theme style -->
     <link href="../adminlte/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
 	
-    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
-          page. However, you can choose any other skin. Make sure you
-          apply the skin class to the body tag so the changes take effect.
-    -->
     <link href="../adminlte/dist/css/skins/skin-green-light.min.css" rel="stylesheet" type="text/css" />
-    <!-- DATA TABLES -->
-    <link href="../adminlte/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-  <!--
-  BODY TAG OPTIONS:
-  =================
-  Apply one or more of the following classes to get the
-  desired effect
-  |---------------------------------------------------------|
-  | SKINS         | skin-blue                               |
-  |               | skin-black                              |
-  |               | skin-purple                             |
-  |               | skin-yellow                             |
-  |               | skin-red                                |
-  |               | skin-green                              |
-  |---------------------------------------------------------|
-  |LAYOUT OPTIONS | fixed                                   |
-  |               | layout-boxed                            |
-  |               | layout-top-nav                          |
-  |               | sidebar-collapse                        |
-  |               | sidebar-mini                            |
-  |---------------------------------------------------------|
-  -->
+
   <body class="skin-green-light sidebar-mini">
     <div class="wrapper">
 
@@ -163,77 +127,104 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Dana Keluar
+            Update Data Pengeluaran
             
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> HOME</a></li>
             <li><a href="#"> Pengeluaran</a></li>
-            <li class="active"> Dana Keluar</li>
+            <li class="active"> Update Data Pengeluaran</li>
           </ol>
         </section>
         <!-- Main content -->
-      
 
         <section class="content">
-            <div class="box">
+          <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+              <!-- general form elements -->
+              <div class="box box-primary">
                 <div class="box-header">
-                 <div class=".col-sm-4">
-                  <h3 class="box-title"></h3>
-                </div>
-                  <div class="col-md-6" style="text-align: left;">
-                  <a href="tambah_keluar.php"><button class="btn btn.bg-olive btn-info"><li class="fa fa-plus"></li> Tambah Data</button></a>
-                </div>
+                  <h3 class="box-title"><i class="fa fa-plus-square-o"></i> Tambah Data</h3>
                 </div><!-- /.box-header -->
-                <div class="box-body">
-                  <table id="example1" class="table table-bordered table-striped">
-                    <thead>
-                      <tr>
-                         <th>No.</th>
-                         <th>User</th>
-                         <th>Tanggal</th>
-                         <th>Jumlah</th>
-                         <th> Keterangan</th>
-                         <th>Aksi</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                       <?php 
-                          $no = 1;
-                           $sql = mysqli_query($koneksi, "SELECT * FROM kas WHERE jenis = 'keluar' ");
-                           while ($data = mysqli_fetch_assoc($sql)) {
+                <!-- form start -->
+                <form role="form" method="POST">
+                  <div class="box-body">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Kode Pengeluaran</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukkan 8 Digit Kode Masuk"  name="Kode">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">User</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="User"  name="Nama_Mhs">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Tanggal</label>
+                      <input type="date" class="form-control" id="exampleInputEmail1" placeholder="tanggal" name="tgl">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Jumlah</label>
+                      <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Jumlah" name="keluar">
+                    </div> 
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Keterangan</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Keterangan" name="keterangan">
+                    </div>
+                  </div><!-- /.box-body -->
 
-                            ?>
-                            <tr>
-                              <td><?php echo $data['Kode']; ?></td>
-                              <td><?php echo $data['Nama_Mhs']; ?></td>
-                              <td><?php echo date('d F Y', strtotime($data['tgl'])); ?></td>
-                              <td style="text-align: right;">
-                                   <?php echo number_format($data['keluar']).",-"; ?>
-                               </td>
-                               <td><?php echo $data['keterangan']; ?></td>
-                               
-                          <td>
-                          <a onclick="return confirm('Apakah anda yakin ingin menghapus data?')" href="hapus_keluar.php?id=<?php echo $data['Kode'];?>" class="btn btn-danger btn-md" title="Hapus Data"><i class="fa fa-trash"> </i></a>
-                          <a onclick="return confirm('Apakah anda yakin ingin mengupdate data?')" href ="update_keluar.php?id=<?php echo $data['Kode'];?>" class="btn btn-primary btn-md" title="Update_Data"><i class="fa fa-pencil-square-o"> </i></a>
-                                            </td>
-                      </tr>
-                       <?php 
-                         ini_set("display_errors","Off");
-                         $total = $total+$data['keluar'];
-                         } 
-                        ?>
-                    </tbody>
-                    <tr>
-                      <td colspan="3" style="text-align: left; font-size: 17px; color: maroon;">Total Kas Keluar :</td>
-                       <td style="font-size: 17px; text-align: right; "><font style="color: green;"><?php echo " Rp." . number_format($total).",-"; ?></font></td>
-                     </tr>
-                  </table>
-
-                </div><!-- /.box-body -->
+                  <div class="box-footer">
+                    <button type="submit" name="simpan" class="btn btn-primary">Simpan</button>
+                  </div>
+                </form>
               </div><!-- /.box -->
-        </section>
+        <?php
+        if ($_access == 'kas' && $_id != $_Kode) {
+		header("location:{$_url}kas/edit/{$_username}");
+	}
 
+$querya = mysqli_query($koneksi, "SELECT * FROM kas WHERE jenis='keluar' AND Kode='{$_id}'");
+$field = mysqli_fetch_array($querya);
+
+?>
+
+<div class="isi2">
+<h1>
+<?php if (in_array($_access, array('admin'))): ?>
+<a href="<?= $_url ?>kas<?= $_access == 'kas' ? '/view/' . $_id . '/' . urlencode($nama) : '' ?>" class="nav-button transform"><span></span></a>
+<?php endif; ?>
+Edit Pengeluaran<br><?= $nama ?>
+</h1>
+
+<?php
+      if (isset($_POST['simpan'])) {
+
+      $Kode= $_POST['Kode'];
+      $Nama_Mhs = $_POST['Nama_Mhs'];
+      $tgl = $_POST['tgl'];
+      $keluar = $_POST['keluar'];
+      $keterangan = $_POST['keterangan'];
+
+      $query = mysqli_query($koneksi, "UPDATE kas SET Kode='$Kode' , 
+      Nama_Mhs='$Nama_Mhs' , 
+      tgl='$tgl' , 
+      keluar='$keluar' ,  
+      keterangan='$keterangan'
+      WHERE jenis='keluar' AND Kode='$Kode'");
+
+      if($query) {
+      echo "
+      <script>
+      alert('Data Pengeluaran Berhasil Diubah');
+      document.location.href = 'dana_keluar.php';
+      </script>";   
+      }
+    }
+?>
+
+                            <!-- Akhir Halaman Tambah -->
+            </div>
+          </div>
+        </section>
          
 
       </div><!-- /.content-wrapper -->
@@ -259,34 +250,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- jQuery 2.1.4 -->
     <script src="../adminlte/plugins/jQuery/jQuery-2.1.4.min.js"></script>
-    <!-- Bootstrap. 3.3.2 JS -->
+    <!-- Bootstrap 3.3.2 JS -->
     <script src="../adminlte/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <!-- AdminLTE App -->
     <script src="../adminlte/dist/js/app.min.js" type="text/javascript"></script>
 
-    <!-- DATA TABES SCRIPT -->
-    <script src="../adminlte/plugins/datatables/jquery.dataTables.min.js" type="text/javascript"></script>
-    <script src="../adminlte/plugins/datatables/dataTables.bootstrap.min.js" type="text/javascript"></script>
-    <!-- SlimScroll -->
-    <script src="../adminlte/plugins/slimScroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-    <!-- FastClick -->
-    <script src='../adminlte/plugins/fastclick/fastclick.min.js'></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="../adminlte/dist/js/demo.js" type="text/javascript"></script>
-    <!-- page script -->
-    <script type="text/javascript">
-      $(function () {
-        $("#example1").dataTable();
-        $('#example2').dataTable({
-          "bPaginate": true,
-          "bLengthChange": false,
-          "bFilter": false,
-          "bSort": true,
-          "bInfo": true,
-          "bAutoWidth": false
-        });
-      });
-    </script>
+   
     
   </body>
 </html>

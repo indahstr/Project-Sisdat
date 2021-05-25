@@ -152,7 +152,7 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
                   <div class="box-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Kode Pemasukkan</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukkan 6 Digit Kode Masuk"  name="Kode">
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukkan 8 Digit Kode Masuk"  name="Kode">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Nama Mahasiswa</label>
@@ -160,11 +160,11 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">tanggal</label>
-                      <input type="date" class="form-control" id="exampleInputEmail1" placeholder="tanggal" name="tgl">
+                      <input type="date" class="form-control" id="exampleInputEmail1" placeholder="Tanggal" name="tgl">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">Jumlah</label>
-                      <input type="number" class="form-control" id="exampleInputPassword1" placeholder="jumlah" name="jumlah">
+                      <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Jumlah" name="jumlah">
                     </div> 
                     <div class="form-group">
                       <label for="exampleInputEmail1">Keterangan</label>
@@ -185,7 +185,7 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
                         $jumlah = $_POST['jumlah'];
                         $keterangan = $_POST['keterangan'];
 
-                        $sql = mysqli_query($koneksi, "INSERT INTO kas (kode, Nama_Mhs, tgl, jumlah,keterangan, jenis, keluar) VALUES ('$Kode', '$Nama_Mhs', '$tgl', '$jumlah','$ket', 'masuk', 0)");
+                        $sql = mysqli_query($koneksi, "INSERT INTO kas (kode, Nama_Mhs, tgl, jumlah,keterangan, jenis, keluar) VALUES ('$Kode', '$Nama_Mhs', '$tgl', '$jumlah','$keterangan', 'masuk', 0)");
 
                         if($sql) {
                             echo "

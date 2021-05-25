@@ -100,7 +100,7 @@ INSERT INTO `kas` (`Kode`, `Nama_Mhs`,`tgl`, `jumlah`, `jenis`,`keterangan`,`kel
 ('MSK00004' , 'Zahran Hanif Fathanmubin' , '2021-05-03','3000' ,'masuk' ,'Kas Feb 2021',0),
 ('MSK00005' , 'Wafi Fahruzzaman' ,'2021-05-03', '6000','masuk','Kas Feb-Maret 2021',0 ),
 ('MSK00006' , 'Laura Azra Aprilyanti' , '2021-05-04' , '6000','masuk','Kas Feb-Maret 2021',0),
-('HTG00006' , 'admin1' ,'2021-05-09', '0','keluar','Fotocopy Tugas Sisdat',5000);
+('KLR00001' , 'admin1' ,'2021-05-09', '0','keluar','Fotocopy Tugas Sisdat',5000);
 --
 -- Indexes for dumped tables
 --
