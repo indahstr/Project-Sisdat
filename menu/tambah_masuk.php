@@ -12,7 +12,7 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Wang.Cash | Mahasiswa </title>
+    <title>Wang.Cash |  Input Pemasukkan</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
     <link href="../adminlte/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -127,17 +127,18 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Update Data Mahasiswa
+            Tambah Pemasukan
             
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> HOME</a></li>
-            <li><a href="#"> Mahasiswa</a></li>
-            <li class="active"> Update Data Mahasiswa</li>
+            <li><a href="#"> Pemasukan</a></li>
+            <li class="active"> Tambah Pemasukan</li>
           </ol>
         </section>
         <!-- Main content -->
-
+      
+      
          <section class="content">
           <div class="row">
             <!-- left column -->
@@ -145,82 +146,59 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
               <!-- general form elements -->
               <div class="box box-primary">
                 <div class="box-header">
-                  <h3 class="box-title"><i class="fa fa-plus-square-o"></i> Update Data</h3>
+                  <h3 class="box-title"><i class="fa fa-plus-square-o"></i> Tambah Data</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
                 <form role="form" method="POST">
                   <div class="box-body">
-                    <div class="form-group">
-                    <label for="exampleInputEmail1">ID Mahasiswa</label>
-                      <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Masukkan 6 Digit Terakhir"  name="ID_Mhs">
+                  <div class="form-group">
+                      <label for="exampleInputEmail1">Nomor Pemasukkan</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="ID Pemasukkan"  name="Kode">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Nama Mahasiswa</label>
                       <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama Mahasiswa"  name="Nama_Mhs">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Jenis Kelamin</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Keterangan" name="Jenis_Kelamin">
+                      <label for="exampleInputEmail1">tanggal</label>
+                      <input type="date" class="form-control" id="exampleInputEmail1" placeholder="tanggal" name="tgl">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Alamat</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Alamat" name="Alamat">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Status</label>
-                      <input type="Text" class="form-control" id="exampleInputPassword1" placeholder="" name="Status">
+                      <label for="exampleInputPassword1">Jumlah</label>
+                      <input type="number" class="form-control" id="exampleInputPassword1" placeholder="jumlah" name="jumlah">
                     </div> 
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Keterangan</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Keterangan" name="keterangan">
+                    </div>
                   </div><!-- /.box-body -->
 
                   <div class="box-footer">
                     <button type="submit" name="simpan" class="btn btn-primary">Simpan</button>
                   </div>
                 </form>
+
               </div><!-- /.box -->
-        <?php
-        if ($_access == 'data mahasiswa' && $_id != $_ID_Mhs) {
-		header("location:{$_url}mahasiswa/edit/{$_username}");
-	}
+             <?php 
+                    if(isset($_POST['simpan'])) {
+                        $Kode = $_POST['Kode'];
+                        $Nama_Mhs = $_POST['Nama_Mhs'];
+                        $tgl = $_POST['tgl'];
+                        $jumlah = $_POST['jumlah'];
+                        $keterangan = $_POST['keterangan'];
 
-$querya = mysqli_query($koneksi, "SELECT * FROM mahasiswa WHERE ID_Mhs='{$_id}'");
-$field = mysqli_fetch_array($querya);
+                        $sql = mysqli_query($koneksi, "INSERT INTO kas (Kode, Nama_Mhs, tgl, jumlah,keterangan, jenis, keluar) VALUES ('$Kode', '$Nama_Mhs', '$tgl', '$jumlah','$keterangan', 'masuk', 0)");
 
-?>
+                        if($sql) {
 
-<div class="isi2">
-<h1>
-<?php if (in_array($_access, array('admin'))): ?>
-<a href="<?= $_url ?>mahasiswa<?= $_access == 'mahasiswa' ? '/view/' . $_id . '/' . urlencode($nama) : '' ?>" class="nav-button transform"><span></span></a>
-<?php endif; ?>
-Edit Mahasiswa<br><?= $nama ?>
-</h1>
-
-<?php
-      if (isset($_POST['simpan'])) {
-
-      $ID_Mhs= $_POST['ID_Mhs'];
-      $Nama_Mhs = $_POST['Nama_Mhs'];
-      $Jenis_Kelamin = $_POST['Jenis_Kelamin'];
-      $Alamat = $_POST['Alamat'];
-      $Status = $_POST['Status'];
-
-      $query = mysqli_query($koneksi, "UPDATE mahasiswa SET ID_Mhs='$ID_Mhs' , 
-      Nama_Mhs='$Nama_Mhs' , 
-      Jenis_Kelamin='$Jenis_Kelamin' , 
-      Alamat='$Alamat' ,  
-      Status='$Status'
-      WHERE ID_Mhs='$ID_Mhs'");
-
-      if($query) {
-      echo "
-      <script>
-      alert('Data Mahasiswa Berhasil Diubah');
-      document.location.href = 'data_mahasiswa.php';
-      </script>";   
-      }
-    }
-?>
-
+                            echo "
+                                <script>
+                                alert('Data Berhasil Ditambahkan');
+                                document.location.href = 'dana_masuk.php';
+                                </script>";   
+                        }
+                    }
+                ?>
                             <!-- Akhir Halaman Tambah -->
             </div>
           </div>
