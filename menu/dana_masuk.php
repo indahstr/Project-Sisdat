@@ -215,6 +215,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                          <td><?php echo $data['keterangan']; ?></td>
                           <td>
                              <a onclick="return confirm('Apakah anda yakin ingin menghapus data?')" href="hapus_masuk.php?id=<?php echo $data['Kode'];?>" class="btn btn-danger btn-md" title="Hapus Data"><i class="fa fa-trash"> </i></a>
+                             <a onclick="return confirm('Apakah anda yakin ingin mengupdate data?')" href ="update_masuk.php?id=<?php echo $data['Kode'];?>" class="btn btn-primary btn-md" title="Update_Data"><i class="fa fa-pencil-square-o"> </i></a>
                                             </td>
                       </tr>
                        <?php 
