@@ -93,7 +93,7 @@ primary key (Kode)
 -- Dumping data for table `kas`
 --
 
-INSERT INTO `kas` (`kode`, `Nama_Mhs`,`tgl`, `jumlah`, `jenis`,`keterangan`,`keluar`) VALUES
+INSERT INTO `kas` (`Kode`, `Nama_Mhs`,`tgl`, `jumlah`, `jenis`,`keterangan`,`keluar`) VALUES
 ('MSK00001' , 'Rommel Malik Kusnadi' , '2021-05-01','3000','masuk','Kas Feb 2021',0),
 ('MSK00002' , 'Wafa Tsabita', '2021-05-01', '6000' ,'masuk','Kas Feb-Maret 2021',0),
 ('MSK00003' , 'Rafa Azka Ulinnuha' ,'2021-05-02', '3000' ,'masuk','Kas Feb 2021',0),
