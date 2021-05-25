@@ -185,7 +185,7 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
                         $jumlah = $_POST['jumlah'];
                         $keterangan = $_POST['keterangan'];
 
-                        $sql = mysqli_query($koneksi, "INSERT INTO kas (kode, Nama_Mhs, tgl, jumlah,keterangan, jenis, keluar) VALUES ('$Kode', '$Nama_Mhs', '$tgl', '$jumlah','$keterangan', 'masuk', 0)");
+                        $sql = mysqli_query($koneksi, "INSERT INTO kas (kode, Nama_Mhs, tgl, jumlah,keterangan, jenis, keluar) VALUES ('$Kode', '$Nama_Mhs', '$tgl', '$jumlah','$ket', 'masuk', 0)");
 
                         if($sql) {
                             echo "
