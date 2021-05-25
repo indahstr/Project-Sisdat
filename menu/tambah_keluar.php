@@ -172,7 +172,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Main content -->
       
       
-         <section class="content">
+        
+        <section class="content">
           <div class="row">
             <!-- left column -->
             <div class="col-md-12">
@@ -185,8 +186,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <form role="form" method="POST">
                   <div class="box-body">
                   <div class="form-group">
-                      <label for="exampleInputEmail1">Nama Mahasiswa</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Penanggung jawab"  name="Nama_Mhs">
+                    <label for="exampleInputEmail1">Kode Pengeluaran</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukkan 6 Digit Kode Masuk"  name="Kode">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">User</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama Mahasiswa"  name="Nama_Mhs">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">tanggal</label>
@@ -194,7 +199,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">Jumlah</label>
-                      <input type="number" class="form-control" id="exampleInputPassword1" placeholder="jumlah" name="jumlah">
+                      <input type="number" class="form-control" id="exampleInputPassword1" placeholder="jumlah" name="keluar">
                     </div> 
                     <div class="form-group">
                       <label for="exampleInputEmail1">Keterangan</label>
@@ -208,17 +213,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </form>
               </div><!-- /.box -->
              <?php 
-                   if(isset($_POST['simpan'])) {
-                    $kode = $_POST['kode'];
-                    $Nama_Mhs = $_POST['Nama_Mhs'];
-                    $tgl = $_POST['tgl'];
-                    $jml = $_POST['jumlah'];
-                    $ket = $_POST['keterangan'];
+                    if(isset($_POST['simpan'])) {
+                        $Kode= $_POST['Kode'];
+                        $Nama_Mhs = $_POST['Nama_Mhs'];
+                        $tgl = $_POST['tgl'];
+                        $keluar = $_POST['keluar'];
+                        $keterangan = $_POST['keterangan'];
 
-                    $sql = mysqli_query($koneksi, "INSERT INTO kas (kode, Nama_Mhs, tgl, jumlah,keterangan, jenis, keluar) VALUES ('$kode', '$Nama_Mhs',, '$tgl', '$jml','$ket', 'keluar', 0)");
+                        $sql = mysqli_query($koneksi, "INSERT INTO kas (kode, Nama_Mhs, tgl, jumlah,keterangan, jenis, keluar) VALUES ('$Kode', '$Nama_Mhs', '$tgl', 0,'$keterangan', 'keluar', '$keluar')");
 
                         if($sql) {
-
                             echo "
                                 <script>
                                 alert('Data Berhasil Ditambahkan');
